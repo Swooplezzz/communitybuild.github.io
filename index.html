@@ -12,13 +12,13 @@
     <div id="nav-bar" class="nav-bar">
         <a><img class="logo" src="images/Logo.png"></a>
         <ul>
-            <li><a>HOME</a></li>
-            <li><a>FEATURES</a></li>
-            <li><a>DOWNLOADS</a></li>
+            <li><a onclick="onHomeClick()">HOME</a></li>
+            <li><a onclick="onMoreClick()">FEATURES</a></li>
+            <li><a onclick="onDownloadClick()">DOWNLOADS</a></li>
         </ul>
     </div>
 
-    <div class="landing">
+    <div id="landing" class="landing">
         <img class="MBLogo" src="images/MBCBLOGO.png">
         <p>
             Model-bench Community Build is the first Model-bench mod.<br>
@@ -26,15 +26,18 @@
             Get better performance and new QOL features with more coming in the future.<br>
         </p>
 
-        <button class="secbtn">DOWNLOAD</button><button class="secbtn">MORE</button>
+        <button onclick="onDownloadClick()" class="secbtn">DOWNLOAD</button><button onclick="onMoreClick()"
+            class="secbtn">MORE</button>
         <div class="splash">
             <img id="splash1" src="images/MB CB SPLASH 2.png">
+        </div>
+        <div class="splash-front">
             <img id="splash2" src="images/MB CB SPLASH.png">
             <img id="splash3" src="images/MB CB SPLASH 3.png">
         </div>
     </div>
     <span class="bg-gradient"></span>
-    <div class="features">
+    <div id="features" class="features">
         <h1>FEATURES</h1>
         <div class="feature-items">
             <div class="feat-item" id="small-item">
@@ -99,14 +102,14 @@
         </div>
 
     </div>
-    <div class="downloads">
+    <div id="downloads" class="downloads">
         <h1>DOWNLOADS</h1>
         <div class="download-items">
             <div class="dl-item">
                 <h2>Modelbench CB V1.0.0</h2>
                 <p>Improve your modeling experience<br>
                     with Modelbench Community Build !</p>
-                <button class="btn-pri">DOWNLOAD</button>
+                <button class="btn-pri"><a href="builds/Modelbench CB V1.0.0 Trailer Build.zip">DOWNLOAD</a></button>
                 <img class="icon" src="images/MB CB ICON.png">
             </div>
         </div>
@@ -134,6 +137,17 @@
             splash2.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.02 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.02 + "px)";
             splash3.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.02 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.02 + "px)";
         })
+
+        function onMoreClick() {
+            document.getElementById('features').scrollIntoView();
+        }
+        function onDownloadClick() {
+            document.getElementById('downloads').scrollIntoView();
+        }
+        function onHomeClick() {
+            document.getElementById('landing').scrollIntoView();
+
+        }
     </script>
 </body>
 

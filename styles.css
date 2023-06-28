@@ -12,6 +12,7 @@
 html{
   position: relative;
   min-height:100%; 
+    scroll-behavior: smooth;
 }
 body {
   background: var(--bg);
@@ -245,14 +246,18 @@ color: white;
   font-family: 'Rubik', sans-serif;
   color: white;
 }
+a{
+  text-decoration: none;
+}
 .btn-pri{
+
   margin-top: 20px;
   background: var(--accent);
   padding: 3px 10px 3px 13px; 
   display: flex;
-
+  margin-left: 20px;
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 800;
     border-style:solid;
     letter-spacing: 3px;
     border-width: 5px;
@@ -265,6 +270,9 @@ color: white;
   background: var(--accent-hover);
       transition: 100ms ease-in-out;
         transition-property: background;
+}
+.btn-pri a{
+    color: var(--bg);
 }
 .dl-item .icon{
   position: absolute;
@@ -281,15 +289,19 @@ color: white;
 #splash3 {
   transform: translate(0, 0);
 }
-.splash {
-  animation: MoveUpDown 5s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+.splash, .splash-front {
+  animation: MoveUpDown 5s ease-in-out infinite;
     position: absolute;
     transform: translate(0, 0);
   top: 2%;
   right: 5%;
   width: 40rem;
 }
-.splash img{
+.splash-front{
+  animation: MoveUpDown 5s ease-in-out infinite;
+  animation-delay: 50ms;
+}
+.splash img, .splash-front img{
 
   position: absolute;
   top: 5%;
@@ -308,6 +320,18 @@ color: white;
     transform: translateY(20px);
   }
 }
+@keyframes MoveUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+}
+
 .credits{
   margin: 0;
 display: flex;
