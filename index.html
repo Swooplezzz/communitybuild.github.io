@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="bg" id="p_left"> </section>
+
+    <section class="bg" id="p_right"></section>
+    <div id="nav-bar" class="nav-bar">
+        <a><img class="logo" src="images/Logo.png"></a>
+        <ul>
+            <li><a>HOME</a></li>
+            <li><a>FEATURES</a></li>
+            <li><a>DOWNLOADS</a></li>
+        </ul>
+    </div>
+
+    <div class="landing">
+        <img class="MBLogo" src="images/MBCBLOGO.png">
+        <p>
+            Model-bench Community Build is the first Model-bench mod.<br>
+            Currently being developed by Swooplezz.<br>
+            Get better performance and new QOL features with more coming in the future.<br>
+        </p>
+
+        <button class="secbtn">DOWNLOAD</button><button class="secbtn">MORE</button>
+        <div class="splash">
+            <img id="splash1" src="images/MB CB SPLASH 2.png">
+            <img id="splash2" src="images/MB CB SPLASH.png">
+            <img id="splash3" src="images/MB CB SPLASH 3.png">
+        </div>
+    </div>
+    <span class="bg-gradient"></span>
+    <div class="features">
+        <h1>FEATURES</h1>
+        <div class="feature-items">
+            <div class="feat-item" id="small-item">
+                <video autoplay loop>
+                    <source src="videos/FOV.mp4">
+                </video>
+                <h2>CUSTOM FOV</h2>
+                <P>See more or less using the new FOV Slider.</P>
+            </div>
+            <div class="feat-item" id="small-item">
+                <video autoplay loop>
+                    <source src="videos/Mirroring.mp4">
+                </video>
+                <h2>MIRRORING</h2>
+                <P>Save time with modeling by mirroring a part or<br> shape on the X or Z axes.</P>
+            </div>
+            <div class="feat-item" id="small-item">
+                <video autoplay loop>
+                    <source src="videos/FOV.mp4">
+                </video>
+                <h2>BETTER PERFORMANCE</h2>
+                <P>No more gradually decreasing fps !</P>
+            </div>
+
+            <div class="feat-item" id="big-item">
+                <video autoplay loop>
+                    <source src="videos/Snapping.mp4">
+                </video>
+                <h2>VIEW SNAPPING</h2>
+                <P>Easily snap the work camera to the<br> X, Y or Z axis.</P>
+            </div>
+            <div class="feat-item" id="big-item">
+                <video autoplay loop>
+                    <source src="videos/Ortho.mp4">
+                </video>
+                <h2>ORTHOGRAPHIC PROJECTION</h2>
+                <P>Change up the camera projection to get
+                    better<br> looking screenshots.</P>
+            </div>
+
+            <div class="feat-item" id="small-item">
+                <video autoplay loop>
+                    <source src="videos/Compact.mp4">
+                </video>
+                <h2>COMPACT PANELS/ELEMENTS</h2>
+                <P>View more content.</P>
+            </div>
+            <div class="feat-item" id="small-item">
+                <video autoplay loop>
+                    <source src="videos/Thumbnails.mp4">
+                </video>
+                <h2>HOME VIEW THUMBNAILS</h2>
+                <P>See what your models look like before opening.</P>
+            </div>
+            <div class="feat-item" id="small-item">
+                <video autoplay loop>
+                    <source src="videos/MuchMore.mp4">
+                </video>
+                <h2>QOL KEYBINDS</h2>
+                <P>Add, Move, Mirror, Scale, or Rotate elements with new keybinds<br> to speed up your workflow.</P>
+            </div>
+        </div>
+
+    </div>
+    <div class="downloads">
+        <h1>DOWNLOADS</h1>
+        <div class="download-items">
+            <div class="dl-item">
+                <h2>Modelbench CB V1.0.0</h2>
+                <p>Improve your modeling experience<br>
+                    with Modelbench Community Build !</p>
+                <button class="btn-pri">DOWNLOAD</button>
+                <img class="icon" src="images/MB CB ICON.png">
+            </div>
+        </div>
+    </div>
+    <div class="credits">
+        <div>
+            <p>MODELBENCH CREATED BY NIMI</p>
+            <p>MOD BY SWOOPLEZZ</p>
+        </div>
+        <div class="right">
+            <p><a href="">DISCORD</a></p>
+            <p><a href="">YOUTUBE</a></p>
+        </div>
+    </div>
+    <script>
+        let splash1 = document.getElementById('splash1');
+        let splash2 = document.getElementById('splash2');
+        let splash3 = document.getElementById('splash3');
+        let navbar = document.getElementById('nav-bar');
+
+        window.addEventListener("mousemove", () => {
+            let mousePos = { x: event.clientX, y: event.clientY };
+
+            splash1.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.01 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.01 + "px)";
+            splash2.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.02 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.02 + "px)";
+            splash3.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.02 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.02 + "px)";
+        })
+    </script>
+</body>
+
+</html>
