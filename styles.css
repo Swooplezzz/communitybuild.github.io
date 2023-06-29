@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600&display=swap');
 :root {
   --bg: #101010;
   --accent: #d693ff;
@@ -7,7 +9,6 @@
   --text-hover: #ffffff;
   --outline: #3e3e3e;
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&family=Rubik:wght@400;500;600&display=swap');
 
 html{
   position: relative;
