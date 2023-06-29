@@ -12,6 +12,7 @@
 html{
   position: relative;
   min-height:100%; 
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 body {
@@ -44,7 +45,9 @@ h1{
     position: relative;
     margin-top: 50;
     margin-left: -40;
-    width: 40%;
+    padding: 50px;
+  width: 70vmin;
+  max-width: 50vmax;
 }
 p{
     font-size: 20;
@@ -57,7 +60,7 @@ p{
     border: #3e3e3e solid 2px;
     color: var(--text);
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: .2rem;
     font-family: 'Noto Sans', sans-serif;
     transition: 100ms ease-in-out;
     transition-property: color, border;
@@ -71,6 +74,7 @@ p{
 }
 .landing p{
     margin-top: 10px;
+    letter-spacing: .15rem;
     line-height: 50px;
 }
 
@@ -96,10 +100,10 @@ z-index: -1;
     width: 100%;
     height: 100%;
     top: 0;
-    backdrop-filter: blur(5px);
-background-color: var(--accent-nav);
-      -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent );
-      mask-image: linear-gradient(to bottom, black 20%, transparent);
+    backdrop-filter: blur(3px);
+background: linear-gradient(to bottom, var(--accent-nav) , transparent 90%);
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent );
+      mask-image: linear-gradient(to bottom, black 60%, transparent);
 
 }
 #nav-bar{
@@ -213,11 +217,11 @@ display: block;
 
 }
 #big-item video{
-  width: 650;height: 650;
+  width: 35vw;height: 35vw;
 }
 .feat-item video{
-  width: 450px;
-  height: 450px;
+  width: 25vw;
+  height: 25vw;
     object-fit: cover;
 
     outline: var(--accent) solid 5px;
@@ -274,32 +278,39 @@ a{
 .btn-pri a{
     color: var(--bg);
 }
+.dl-item{
+  display: block;
+
+}
 .dl-item .icon{
   position: absolute;
-  right: 5%;
-  top: 20%;
-  width: 20%;
+  right: 10%;
+  z-index: -1;
+  width: 30vmin;
 }
 #splash1 {
-  transform: translate(0, 0);
+  transform: translateY(0);
 }
 #splash2 {
-  transform: translate(0, 0);
+  transform: translateY(0);
 }
 #splash3 {
-  transform: translate(0, 0);
+  transform: translateY(0);
 }
 .splash, .splash-front {
-  animation: MoveUpDown 5s ease-in-out infinite;
+z-index: -1;
     position: absolute;
-    transform: translate(0, 0);
+    transform: translateY(0);
   top: 2%;
   right: 5%;
   width: 40rem;
 }
+.splash{
+    animation: MoveUpDown 5s ease-in-out infinite;
+}
 .splash-front{
   animation: MoveUpDown 5s ease-in-out infinite;
-  animation-delay: 50ms;
+  animation-delay: 1000ms;
 }
 .splash img, .splash-front img{
 
@@ -309,17 +320,6 @@ a{
   width: 40rem;
 }
 
-@keyframes MoveUpDown {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(20px);
-  }
-}
 @keyframes MoveUpDown {
 
   0%,
@@ -377,3 +377,122 @@ right: 15%;
 
 }
 
+@media only screen and (max-width: 1066px) {
+  body {
+  overflow-x: hidden;
+
+  }
+  .landing{
+    margin-top: 20px;
+  }
+  .landing p{
+    font-size: .9rem;
+    margin-top: 0;
+  text-shadow: 2px 2px black;
+text-align: left;
+  }
+  .secbtn{
+    margin-top: 10px;
+    margin: 5px;
+    font-size: .9rem;
+        margin-top: 20px;
+  }
+
+.splash,
+.splash-front {
+  opacity: 50%;
+  position: absolute;
+right: -20vmax;
+
+  width: 40rem;
+}
+.landing{
+
+}
+.MBLogo {
+  left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+  margin-top: 150px;
+  margin-left: 0;
+  width: 70vmin;
+
+
+}
+
+.splash img,
+.splash-front img{
+
+
+  width: 30rem;
+}
+.nav-bar{
+
+display: block;
+  height: 150px;
+
+}
+.nav-bar ul{
+  width: 70%;
+position: relative;
+margin: 0;
+left: 50%;
+transform: translateX(-50%);
+padding: 0;
+}
+.nav-bar li{
+text-align: center;
+font-size: .7rem;
+  width: 100%;
+  margin: 0 0 30 0;
+}
+
+.nav-bar .logo{
+left: 50%;
+
+transform: translateX(-50%);
+position: relative;
+}
+.features{
+
+}
+
+.features h1, .downloads h1{
+font-size: 2rem;
+letter-spacing: .8rem;
+
+}
+#big-item {
+  flex-basis: calc(100% / 2);
+}
+
+#small-item {
+  flex-basis: calc(100% / 2);
+}
+#big-item video {
+  width: 35vw;
+  height: 35vw;
+}
+
+.feat-item video {
+  width: 35vw;
+  height: 35vw;
+}
+.credits p{
+  font-size: .6em;
+}
+.dl-item .icon{
+  opacity: 50%;
+}
+}
+@media only screen and (max-width: 750px) {
+  #big-item video {
+      width: 60vw;
+      height: 60vw;
+    }
+  
+    .feat-item video {
+      width: 60vw;
+      height: 60vw;
+    }
+}
