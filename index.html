@@ -56,22 +56,22 @@
                 <P>Save time with modeling by mirroring a part or<br> shape on the X or Z axes.</P>
             </div>
             <div class="feat-item" id="small-item">
-                <video autoplay loop>
-                    <source src="videos/FOV.mp4">
+                <video autoplay muted loop>
+                    <source src="videos/performance.mp4">
                 </video>
                 <h2>BETTER PERFORMANCE</h2>
                 <P>No more gradually decreasing fps !</P>
             </div>
 
             <div class="feat-item" id="big-item">
-                <video autoplay loop>
+                <video autoplay muted loop>
                     <source src="videos/Snapping.mp4">
                 </video>
                 <h2>VIEW SNAPPING</h2>
                 <P>Easily snap the work camera to the<br> X, Y or Z axis.</P>
             </div>
             <div class="feat-item" id="big-item">
-                <video autoplay loop>
+                <video autoplay muted loop>
                     <source src="videos/Ortho.mp4">
                 </video>
                 <h2>ORTHOGRAPHIC PROJECTION</h2>
@@ -111,15 +111,80 @@
                 <h2>Modelbench CB V1.0.0</h2>
                 <p>Improve your modeling experience<br>
                     with Modelbench Community Build !</p>
-                <button class="btn-pri"><a href="builds/Modelbench CB V1.0.0 Trailer Build.zip">DOWNLOAD</a></button>
+                <button class="btn-pri"><a id="download-btn">DOWNLOAD</a></button>
+                <div onclick="onChangeLogClick()" id="change-log" class="change-log hidden">
+                    <h2>Change Log:</h2>
+                    <ul id="log">
+                        <h3>Added:</h3>
+                        <li>Model Mirroring.</li>
+                        <dd>You can now easily mirror any part or shape on the x or z axis with or without mirroring the
+                            textures . (note :
+                            mirroring on the x axis is somewhat broken with cubes due to Mine-Imator not having the
+                            ability
+                            to
+                            mirror cube textures
+                            on the x axis . )</dd>
 
+                        <li>Orthographic Projection / Isometric Projection</li>
+                        <dd>You can also view your models in Orthographic View, this is might become useful to you when
+                            taking
+                            model screenshots.</dd>
+
+                        <li>View Snapping</li>
+                        <dd>You can now snap the camera view to the X, Y or Z axis to make aligning objects when
+                            modeling
+                            easier.</dd>
+
+                        <li>Home screen Thumbnails</li>
+                        <dd>Easily view the models you open from the Home page.</dd>
+
+                        <li>Key-bind Transforms</li>
+                        <dd>Easily move selected elements with your keyboard instead of using gizmos . (note : Free
+                            rotation
+                            is
+                            not yet available
+                            and you have to press the X, Y or Z buttons when using the rotation key-bind)</dd>
+
+                        <li>View Element</li>
+                        <dd>Easily look at the current selected element.</dd>
+
+                        <li>Add Key-bind</li>
+                        <dd>Quickly add Planes, 3D-Planes, Cubes or Parts using a key-bind.</dd>
+
+                        <li>Compact Elements and Panels
+                            <dd>Reduce the spacing between UI elements like how it is in Mine-Imator.</dd>
+
+                        <li>FOV Slider</li>
+                        <dd>Control the FOV of the work camera to your desirable value.</dd>
+
+                        <li>Draggable joint offset</li>
+
+                        <li>Back to home screen button</li>
+
+                        <li>Optional duplicate name warnings</li>
+                        <dd>Parts with the same name will show an error icon.</dd>
+                        <h3>Bug-fixes :</h3>
+
+                        <li>Memory Leak Bug</li>
+                        <dd>An issue existed with Modelbench 1.1.5 where the program used to use excessive amounts of
+                            ram
+                            this
+                            issue is now fixed.</dd>
+                        <li>Open Model has the New Model Keybind in the file context menu.</li>
+                        <li>Center Pivot Axis not working correctly.</li>
+                        <li>Reset Pivot offset not working correctly.</li>
+                        <li>Pasting Pivot Leads to Modelbench crashing.</li>
+                        <li>Freeze when exporting an obj with zero shapes.</li>
+                        <li>Ability to adjust elements in preview mode.</li>
+                        </ol>
+                </div>
             </div>
         </div>
     </div>
     <div class="credits">
         <div>
             <p>MODELBENCH CREATED BY NIMI</p>
-            <p>MOD BY SWOOPLEZZ</p>
+            <p>MOD BY <a target=”_blank” href="https://twitter.com/swooplezz">SWOOPLEZZ</a></p>
         </div>
         <div class="right">
             <p><a target=”_blank” href="https://discord.gg/xs2Z9dEu2y">DISCORD</a></p>
@@ -141,15 +206,77 @@
         })
 
         function onMoreClick() {
-            document.getElementById('features').scrollIntoView();
+            var elementPosition = document.getElementById('features').getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - navbar.offsetHeight;
+            console.log(navbar.offsetHeight);
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
         function onDownloadClick() {
-            document.getElementById('downloads').scrollIntoView();
+            var elementPosition = document.getElementById('downloads').getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - navbar.offsetHeight;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
         function onHomeClick() {
-            document.getElementById('landing').scrollIntoView();
+            var elementPosition = document.getElementById('landing').getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+
+        let coll = document.getElementById('change-log');
+        let content = document.getElementById('log');
+        var i;
+
+
+        function onChangeLogClick() {
+            if (coll.classList.contains('hidden')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+                coll.classList.remove('hidden');
+            }
+            else {
+                content.style.maxHeight = 0 + "px";
+                coll.classList.add('hidden');
+            }
 
         }
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("2023-07-07T20:00:00+03:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById("download-btn").innerHTML = "SOON : " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("download-btn").innerHTML = "DOWNLOAD";
+            }
+        }, 1000);
+
     </script>
 </body>
 
