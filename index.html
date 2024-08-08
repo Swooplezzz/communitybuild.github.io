@@ -4,282 +4,118 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <title>Modelbench CB</title>
-    <link rel="icon" type="image/x-icon" href="images/MB CB ICON.png">
+    <title>Community Builds</title>
+    <link rel="icon" type="image/x-icon" href="images/MI CB ICON.png">
+    <link href="/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+
+</head>
+<script>
+
+    function OnProductsClick() {
+        document.getElementById("misect").scrollIntoView();
+    }
+    function OnMIClick() {
+       //document.getElementById("misect").scrollIntoView();
+        setTimeout("open('/mineimator', '_self')", 0);
+    }
+    function OnMBClick() {
+        //document.getElementById("mbsect").scrollIntoView();
+        setTimeout("open('/modelbench', '_self')", 0);
+    }   
+    function onWhatsNewClick() {
+        //document.getElementById("mbsect").scrollIntoView();
+        document.getElementById("misect").scrollIntoView();
+    }
+</script>
 
 <body>
-    <section class="bg" id="p_left"> </section>
+    <section class="bg" id="p_left"></section>
 
     <section class="bg" id="p_right"></section>
     <div id="nav-bar" class="nav-bar">
         <a><img class="logo" src="images/Logo.png"></a>
         <ul>
-            <li><a onclick="onHomeClick()">HOME</a></li>
-            <li><a onclick="onMoreClick()">FEATURES</a></li>
-            <li><a onclick="onDownloadClick()">DOWNLOADS</a></li>
+            <li><a href="/">HOME</a></li>
+            <li><a onclick="OnProductsClick()">PRODUCTS</a></li>
+            <!-- <li><a href="/donate">DONATE</a></li> -->
         </ul>
     </div>
 
     <div id="landing" class="landing">
-        <img class="MBLogo" src="images/MBCBLOGO.png">
-        <p>
-            Model-bench Community Build is the first Model-bench mod.<br>
-            Currently being developed by Swooplezz.<br>
-            Get better performance and new QOL features with more coming in the future.<br>
-        </p>
-
-        <button onclick="onDownloadClick()" class="secbtn">DOWNLOAD</button><button onclick="onMoreClick()"
-            class="secbtn">MORE</button>
-        <div class="splash">
-            <img id="splash1" src="images/MB CB SPLASH 2.png">
+        <P class="landing-title">THE NEW COMMUNITY BUILD<br> EXPERIENCE</P>
+        <div>
+            <button onclick="onWhatsNewClick()" class="btn-pri">WHAT'S NEW ?</button>
         </div>
-        <div class="splash-front">
-            <img id="splash2" src="images/MB CB SPLASH.png">
-            <img id="splash3" src="images/MB CB SPLASH 3.png">
+        <span class="bg-gradient"></span>
+    </div>
+    <div class="gradients">
+    <div id="gradient2"></div>
+    <div id="gradient3"></div>
+</div>
+    <div class="section misect" id="misect">
+        <div id="gradient1"></div>
+
+        <div class="Title">
+            <div class="vernum">
+                <h2>V1.0.0 CB</h2>
+                <h2 id="tag">NEW</h2>
+            </div>
+            <h1>MINE-IMATOR</h1>
+            <div class="btn-group-title">
+                <a onclick="OnMIClick()">
+                    <button onclick="OnMIClick()" class="btn-pri">MORE</button>
+                </a>
+            </div>
+        </div>
+        <div class="bg">
+            <img src="images//Mine-imator/AppScreenshot.png">
+            <img id="splash" src="images//Mine-imator/Splash Layer 2.png">
+            <img id="splash2" src="images//Mine-imator/Splash Layer.png">
         </div>
     </div>
-    <span class="bg-gradient"></span>
-    <div id="features" class="features">
-        <h1>FEATURES</h1>
-        <div class="feature-items">
-            <div class="feat-item" id="small-item">
-                <video autoplay loop>
-                    <source src="videos/FOV.mp4">
-                </video>
-                <h2>CUSTOM FOV</h2>
-                <P>See more or less using the new FOV Slider.</P>
+    <div class="section mbsect" id="mbsect">
+ 
+        <div class="Title">
+            <div class="vernum">
+                <h2>V1.1.0 CB</h2>
+                <h2 id="tag">NEW</h2>
             </div>
-            <div class="feat-item" id="small-item">
-                <video autoplay loop>
-                    <source src="videos/Mirroring.mp4">
-                </video>
-                <h2>MIRRORING</h2>
-                <P>Save time with modeling by mirroring a part or<br> shape on the X or Z axes.</P>
-            </div>
-            <div class="feat-item" id="small-item">
-                <video autoplay muted loop>
-                    <source src="videos/performance.mp4">
-                </video>
-                <h2>BETTER PERFORMANCE</h2>
-                <P>No more gradually decreasing fps !</P>
-            </div>
-
-            <div class="feat-item" id="big-item">
-                <video autoplay muted loop>
-                    <source src="videos/Snapping.mp4">
-                </video>
-                <h2>VIEW SNAPPING</h2>
-                <P>Easily snap the work camera to the<br> X, Y or Z axis.</P>
-            </div>
-            <div class="feat-item" id="big-item">
-                <video autoplay muted loop>
-                    <source src="videos/Ortho.mp4">
-                </video>
-                <h2>ORTHOGRAPHIC PROJECTION</h2>
-                <P>Change up the camera projection to get
-                    better<br> looking screenshots.</P>
-            </div>
-
-            <div class="feat-item" id="small-item">
-                <video autoplay loop>
-                    <source src="videos/Compact.mp4">
-                </video>
-                <h2>COMPACT PANELS/ELEMENTS</h2>
-                <P>View more content.</P>
-            </div>
-            <div class="feat-item" id="small-item">
-                <video autoplay loop>
-                    <source src="videos/Thumbnails.mp4">
-                </video>
-                <h2>HOME VIEW THUMBNAILS</h2>
-                <P>See what your models look like before opening.</P>
-            </div>
-            <div class="feat-item" id="small-item">
-                <video autoplay loop>
-                    <source src="videos/MuchMore.mp4">
-                </video>
-                <h2>QOL KEYBINDS</h2>
-                <P>Add, Move, Mirror, Scale, or Rotate elements with new keybinds<br> to speed up your workflow.</P>
+            <h1>MODELBENCH</h1>
+            <div class="btn-group-title">
+                <a onclick="OnMBClick()">
+                    <button onclick="OnMIClick()" class="btn-pri">MORE</button>
+                </a>
             </div>
         </div>
-
-    </div>
-    <div id="downloads" class="downloads">
-        <h1>DOWNLOADS</h1>
-        <div class="download-items">
-            <div class="dl-item">
-                <img class="icon" src="images/MB CB ICON.png">
-                <h2>Modelbench CB V1.0.0</h2>
-                <p>Improve your modeling experience<br>
-                    with Modelbench Community Build !</p>
-                <button class="btn-pri"><a id="download-btn"
-                        href="builds/Modelbench_CB v1.0.0.zip">DOWNLOAD</a></button>
-                <div onclick="onChangeLogClick()" id="change-log" class="change-log hidden">
-                    <h2>Change Log:</h2>
-                    <ul id="log">
-                        <h3>Added:</h3>
-                        <li>Model Mirroring.</li>
-                        <dd>You can now easily mirror any part or shape on the x or z axis with or without mirroring the
-                            textures . (note :
-                            mirroring on the x axis is somewhat broken with cubes due to Mine-Imator not having the
-                            ability
-                            to
-                            mirror cube textures
-                            on the x axis . )</dd>
-
-                        <li>Orthographic Projection / Isometric Projection</li>
-                        <dd>You can also view your models in Orthographic View, this is might become useful to you when
-                            taking
-                            model screenshots.</dd>
-
-                        <li>View Snapping</li>
-                        <dd>You can now snap the camera view to the X, Y or Z axis to make aligning objects when
-                            modeling
-                            easier.</dd>
-
-                        <li>Home screen Thumbnails</li>
-                        <dd>Easily view the models you open from the Home page.</dd>
-
-                        <li>Key-bind Transforms</li>
-                        <dd>Easily move selected elements with your keyboard instead of using gizmos . (note : Free
-                            rotation
-                            is
-                            not yet available
-                            and you have to press the X, Y or Z buttons when using the rotation key-bind)</dd>
-
-                        <li>View Element</li>
-                        <dd>Easily look at the current selected element.</dd>
-
-                        <li>Add Key-bind</li>
-                        <dd>Quickly add Planes, 3D-Planes, Cubes or Parts using a key-bind.</dd>
-
-                        <li>Compact Elements and Panels
-                            <dd>Reduce the spacing between UI elements like how it is in Mine-Imator.</dd>
-
-                        <li>FOV Slider</li>
-                        <dd>Control the FOV of the work camera to your desirable value.</dd>
-
-                        <li>Draggable joint offset</li>
-
-                        <li>Back to home screen button</li>
-
-                        <li>Optional duplicate name warnings</li>
-                        <dd>Parts with the same name will show an error icon.</dd>
-                        <h3>Bug-fixes :</h3>
-
-                        <li>Memory Leak Bug</li>
-                        <dd>An issue existed with Modelbench 1.1.5 where the program used to use excessive amounts of
-                            ram
-                            this
-                            issue is now fixed.</dd>
-                        <li>Open Model has the New Model Keybind in the file context menu.</li>
-                        <li>Center Pivot Axis not working correctly.</li>
-                        <li>Reset Pivot offset not working correctly.</li>
-                        <li>Pasting Pivot Leads to Modelbench crashing.</li>
-                        <li>Freeze when exporting an obj with zero shapes.</li>
-                        <li>Ability to adjust elements in preview mode.</li>
-                        </ol>
-                </div>
-            </div>
+        <div class="bg">
+            <img src="images//Modelbench/MBSCREENSHOT.png">
+            <img id="splash" src="images//Modelbench/MBSPLASH.png">
         </div>
     </div>
+
     <div class="credits">
         <div>
-            <p>MODELBENCH CREATED BY NIMI</p>
-            <p>MOD BY <a target=”_blank” href="https://twitter.com/swooplezz">SWOOPLEZZ</a></p>
+            <p>MINE-IMATOR CREATED BY DAVID ANDREI</p>
+            <p>MODELBENCH CREATED BY NIMI <i class="fa-solid fa-heart"></i></p>
+            <p>MOD DEVELOPMENT
+                <a target=”_blank” href="https://twitter.com/swooplezz">SWOOPLEZZ</a>
+                &
+                <a target=”_blank” href="https://twitter.com/mbandersmc">MBANDERS</a>
+            </p>
+        </div>
+        <div>
+            <p><br></p>
+
         </div>
         <div class="right">
             <p><a target=”_blank” href="https://discord.gg/xs2Z9dEu2y">DISCORD</a></p>
             <p><a target=”_blank” href="https://twitter.com/@_Mineimator_CB">TWITTER</a></p>
+            <p><a target=”_blank” href="https://bsky.app/profile/mineimator-cb.bsky.social">BSKY</a></p>
         </div>
     </div>
-    <script>
-        let splash1 = document.getElementById('splash1');
-        let splash2 = document.getElementById('splash2');
-        let splash3 = document.getElementById('splash3');
-        let navbar = document.getElementById('nav-bar');
-
-        window.addEventListener("mousemove", () => {
-            let mousePos = { x: event.clientX, y: event.clientY };
-
-            splash1.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.01 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.01 + "px)";
-            splash2.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.02 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.02 + "px)";
-            splash3.style.transform = "translate(" + (mousePos.x - window.visualViewport.width / 2) * 0.02 + "px," + (mousePos.y - window.visualViewport.height / 2) * 0.02 + "px)";
-        })
-
-        function onMoreClick() {
-            var elementPosition = document.getElementById('features').getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - navbar.offsetHeight;
-            console.log(navbar.offsetHeight);
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }
-        function onDownloadClick() {
-            var elementPosition = document.getElementById('downloads').getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset - navbar.offsetHeight;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }
-        function onHomeClick() {
-            var elementPosition = document.getElementById('landing').getBoundingClientRect().top;
-            var offsetPosition = elementPosition + window.pageYOffset;
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }
-
-        let coll = document.getElementById('change-log');
-        let content = document.getElementById('log');
-        var i;
-
-
-        function onChangeLogClick() {
-            if (coll.classList.contains('hidden')) {
-                content.style.maxHeight = content.scrollHeight + "px";
-                coll.classList.remove('hidden');
-            }
-            else {
-                content.style.maxHeight = 0 + "px";
-                coll.classList.add('hidden');
-            }
-
-        }
-
-        // Set the date we're counting down to
-        var countDownDate = new Date("2023-07-07T19:00:00+03:00").getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Display the result in the element with id="demo"
-            document.getElementById("download-btn").innerHTML = "SOON : " + hours + "h "
-                + minutes + "m " + seconds + "s ";
-
-            // If the count down is finished, write some text
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("download-btn").innerHTML = "DOWNLOAD";
-            }
-        }, 1000);
-
-    </script>
+    <div id="fade" class="fade"></div>
 </body>
 
 </html>
