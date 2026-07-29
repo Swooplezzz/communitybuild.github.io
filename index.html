@@ -9,60 +9,55 @@
     <link href="/fontawesome-free-6.5.1-web/css/fontawesome.css" rel="stylesheet">
     <link href="/fontawesome-free-6.5.1-web/css/brands.css" rel="stylesheet">
     <link href="/fontawesome-free-6.5.1-web/css/solid.css" rel="stylesheet">
+<script src="https://unpkg.com"></script>
 
 </head>
-<script>
-
-    function OnProductsClick() {
-        document.getElementById("misect").scrollIntoView();
-    }
-    function OnMIClick() {
-       //document.getElementById("misect").scrollIntoView();
-        setTimeout("open('/mineimator', '_self')", 0);
-    }
-    function OnMBClick() {
-        //document.getElementById("mbsect").scrollIntoView();
-        setTimeout("open('/modelbench', '_self')", 0);
-    }   
-    function onWhatsNewClick() {
-        //document.getElementById("mbsect").scrollIntoView();
-        document.getElementById("misect").scrollIntoView();
-    }
-</script>
+<script src="index.js"></script>
 
 <body>
     <section class="bg" id="p_left"></section>
-
     <section class="bg" id="p_right"></section>
     <div id="nav-bar" class="nav-bar">
         <a><img class="logo" src="images/Logo.png"></a>
         <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a onclick="OnProductsClick()">PRODUCTS</a></li>
-            <!-- <li><a href="/donate">DONATE</a></li> -->
+            <li><a onclick="OnHomeClick()">HOME</a></li>
+            <li><a onclick="OnProductsMIClick()">MINE-IMATOR</a></li>
+            <li><a onclick="OnProductsMBClick()">MODELBENCH</a></li>
+            <li><a href="https://patreon.com/mineimatorcb?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink">DONATE</a></li>
         </ul>
     </div>
 
     <div id="landing" class="landing">
-        <P class="landing-title">THE NEW COMMUNITY BUILD<br> EXPERIENCE</P>
-        <div>
+    <img class="bg-img" src="images/1.1.0.png"/>
+    <div class="noise-background"></div>
+    <div class="title">
+        <P class="landing-title">BUILT TO PERFECTION</P>
+        <P class="landing-p">The community build project always aims to deliver quality features-<br>
+           for the community with early-bird builds for supporters who help us<br>
+           keep going! Aiming to improve animating, lighting and compositing<br>
+           in Mine-imator !</P>
+        <div class="btn-group-title">
             <button onclick="onWhatsNewClick()" class="btn-pri">WHAT'S NEW ?</button>
+            <button onclick="onSupportClick()" class="btn-sec">SHOW YOUR SUPPORT <i class="fa-solid fa-heart"></i></button>
         </div>
-        <span class="bg-gradient"></span>
+        </div>
     </div>
+    <span class="bg-gradient"></span>
     <div class="gradients">
-    <div id="gradient2"></div>
-    <div id="gradient3"></div>
+    <div class="random-gradient" id="gradient2"></div>
+    <div class="random-gradient" id="gradient3"></div>
 </div>
     <div class="section misect" id="misect">
-        <div id="gradient1"></div>
-
+        <div class="random-gradient" id="gradient1"></div>
+    <img class="bg-img" src="images/envTest.png"/>
+    <div class="noise-background"></div>
         <div class="Title">
             <div class="vernum">
-                <h2>V1.0.0 CB</h2>
+                <h2>V1.1.0 CB</h2>
                 <h2 id="tag">NEW</h2>
             </div>
             <h1>MINE-IMATOR</h1>
+            <P class="landing-p">Volumetric lighting, planar mirrors,<br>cartoonize effect, and more!</P>
             <div class="btn-group-title">
                 <a onclick="OnMIClick()">
                     <button onclick="OnMIClick()" class="btn-pri">MORE</button>
@@ -70,19 +65,22 @@
             </div>
         </div>
         <div class="bg">
-            <img src="images//Mine-imator/AppScreenshot.png">
-            <img id="splash" src="images//Mine-imator/Splash Layer 2.png">
-            <img id="splash2" src="images//Mine-imator/Splash Layer.png">
+            <!-- <img src="images//Mine-imator/AppScreenshot.png"> -->
+            <img id="app-screenshot" src="images//Mine-imator/Splash Layer 2.png">
+            <img id="splash" src="images//Mine-imator/Splash Layer.png">
         </div>
     </div>
     <div class="section mbsect" id="mbsect">
- 
+     <img class="bg-img" src="images/MB-BG.png"/>
+    <div class="noise-background"></div>
         <div class="Title">
             <div class="vernum">
-                <h2>V1.1.0 CB</h2>
-                <h2 id="tag">NEW</h2>
+                <h2>V1.2.0 CB</h2>
+                <h2 id="tag">PRE-RELEASE</h2>
             </div>
             <h1>MODELBENCH</h1>
+            <P class="landing-p">Vertex editing, finally you're now able to taper <br>
+                limbs and bodies to any shape<br>(as long as it can be made by moving cube verticies).</P>
             <div class="btn-group-title">
                 <a onclick="OnMBClick()">
                     <button onclick="OnMIClick()" class="btn-pri">MORE</button>
@@ -90,11 +88,22 @@
             </div>
         </div>
         <div class="bg">
-            <img src="images//Modelbench/MBSCREENSHOT.png">
-            <img id="splash" src="images//Modelbench/MBSPLASH.png">
+            <img id="app-screenshot" src="images//Modelbench/MBSCREENSHOT.png" />
+            <img id="splash" src="images//Modelbench/MBSPLASH.png" />
         </div>
     </div>
 
+<div class="community-banner">
+    <div class="text-wall">
+        <!-- JS will inject content here -->
+    </div>
+    <div class="community-banner-text">
+    <h3>Made possible by</h3>
+    <h1>
+        THE COMMUNITY
+    </h1>
+    </div>
+</div>
     <div class="credits">
         <div>
             <p>MINE-IMATOR CREATED BY DAVID ANDREI</p>
